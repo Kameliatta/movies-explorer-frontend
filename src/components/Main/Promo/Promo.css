@@ -1,0 +1,36 @@
+.banner {
+  margin: 0;
+  padding: 184px 0 224px;
+  background-image: url(../../../images/pic__COLOR_landing-logo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.banner__text {
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  text-align: center;
+  margin: 0px auto;
+  max-width: 730px;
+  letter-spacing: -0.04em;
+}
+
+@media screen and (max-width: 1024px) {
+  .banner {
+    padding: 326px 0 342px;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .banner {
+    padding: 207px 0 246px;
+    background-size: 248px;
+  }
+
+  .banner__text {
+    font-size: 31px;
+    line-height: 39px;
+  }
+}

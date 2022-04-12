@@ -1,0 +1,70 @@
+.authorization {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 396px;
+  min-height: 455px;
+}
+
+.authorization__welcome {
+  margin: 0 0 40px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.authorization__text-box {
+  position: relative;
+  border-bottom: 1px solid rgba(66, 66, 66, 1);
+  margin: 0 0 24px;
+}
+
+.authorization__text {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: rgba(139, 139, 139, 1);
+}
+
+.authorization__input {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  outline: none;
+  background-color: inherit;
+  border: none;
+  width: 100%;
+  color: white;
+  padding: 5px 0 10px;
+}
+
+.authorization__error {
+  position: absolute;
+  left: 0;
+  top: 56px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: rgba(238, 52, 101, 1);
+}
+
+.error {
+  color: rgba(238, 52, 101, 1);
+}
+
+@media screen and (max-width: 1024px) {
+  .authorization {
+    min-height: 602px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .authorization {
+    max-width: 260px;
+    min-height: 455px;
+  }
+
+  .authorization__welcome {
+    margin: 0 auto 80px;
+    width: max-content;
+  }
+}
