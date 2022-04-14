@@ -167,4 +167,8 @@
   .about-project__chart-text_front {
     width: 65%;
   }
+
+  .about-project__main-text-container {
+    max-width: 100%;
+  }
 }

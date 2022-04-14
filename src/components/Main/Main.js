@@ -10,11 +10,10 @@ import Footer from '../Footer/Footer';
 import AboutProject from './AboutProject/AboutProject';
 
 export default function Main() {
-  const isLogin = true;
   return (
     <section>
       <div className="main">
-        <Header signup="Регистрация" signin="Войти" isLogin={isLogin} />
+        <Header signup="Регистрация" signin="Войти" isLogin="display" />
         <Promo />
       </div>
       <NavTab />

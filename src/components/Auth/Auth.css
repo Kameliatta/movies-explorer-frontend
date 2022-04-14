@@ -47,7 +47,7 @@
   color: rgba(238, 52, 101, 1);
 }
 
-.error {
+.error, .error::placeholder {
   color: rgba(238, 52, 101, 1);
 }
 

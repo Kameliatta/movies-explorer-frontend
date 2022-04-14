@@ -9,7 +9,13 @@ import Footer from '../Footer/Footer';
 export default function Movies(props) {
   return (
     <>
-    <Header movies={'Фильмы'} savedMovies={'Сохранённые фильмы'} account={'Аккаунт'} img={account_icon} />
+    <Header
+      movies={'Фильмы'}
+      savedMovies={'Сохранённые фильмы'}
+      account={'Аккаунт'}
+      img={account_icon}
+      displayButton="display"
+    />
     <SearchForm />
     <MoviesCardList moviesButtonClass={props.moviesButtonClass} preloaderButtonClass={props.preloaderButtonClass} />
     <Footer />

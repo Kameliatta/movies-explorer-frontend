@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function Profile() {
   return (
     <>
-    <Header movies={'Фильмы'} savedMovies={'Сохранённые фильмы'} />
+    <Header movies={'Фильмы'} savedMovies={'Сохранённые фильмы'} displayButton="display" />
     <section className="profile">
       <h1 className="profile__welcome">Привет, Виталий!</h1>
       <form className="profile__container">
@@ -14,13 +14,27 @@ export default function Profile() {
           <span className="profile__text">
             Имя
           </span>
-          <input className="profile__input" placeholder="Виталий"></input>
+          <input
+            name="name"
+            type="text"
+            className="profile__input input"
+            placeholder="Виталий"
+            minLength="2"
+            maxLength="30"
+          >
+          </input>
         </div>
         <div className="profile__text-box">
           <span className="profile__text">
             E-mail
           </span>
-          <input className="profile__input" placeholder="pochta@yandex.ru"></input>
+          <input
+            name="email"
+            type="email"
+            className="profile__input input"
+            placeholder="pochta@yandex.ru"
+          >
+          </input>
         </div>
       </form>
     </section>

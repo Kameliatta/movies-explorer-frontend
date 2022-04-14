@@ -89,6 +89,42 @@
   display: flex;
 }
 
+.nav-display {
+  display: none;
+}
+
+.header__menu-container {
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__container {
+  list-style: none;
+  margin: 0;
+  padding: 28px 0 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav__link:nth-child(even) {
+  padding-right: 16px;
+}
+
+.nav__text {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.nav-account {
+  display: flex;
+  margin: 21px 0;
+}
+
 @media screen and (max-width: 1024px) {
   .header {
     padding: 2vw 4vw 0;
@@ -96,6 +132,10 @@
 
   .auth {
     padding: 232px 0 40px;
+  }
+
+  .nav-display {
+    display: block;
   }
 
   .header__logo {
@@ -106,59 +146,13 @@
     margin: 6px 15px 0 0;
   }
 
-  .nav-toggle {
-    width: 44px;
-    background-image: url('../../images/panel-icon.svg');
-    background-repeat: no-repeat;
-    cursor: pointer;
-  }
-
-  .nav {
-    z-index: 2001;
-    right: 0;
-    position: fixed;
-    top: 0;
-    width: 68%;
-    height: 100%;
-    background-color: rgba(32, 32, 32, 1);
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav__close-button {
-    position: absolute;
-    top: 23px;
-    right: 26px;
-    background-image: url('../../images/close-button.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: inherit;
-    border: none;
-    width: 22px;
-    height: 22px;
-  }
-
-  .nav__container {
-    padding: 0;
-    margin: 159px 90px 0;
-    list-style: none;
-    text-align: center;
-  }
-
   .mask-content {
     position: absolute;
     left: 0;
     height: 100%;
-    width: 32%;
+    width: 33%;
     background: #202020;
     opacity: 0.3;
-  }
-
-  .nav-account {
-    margin: 0;
-    padding-bottom: 90px;
   }
 
   .underline {
@@ -174,15 +168,78 @@
     background-size: 100% 1px;
   }
 
+  .header__menu-container {
+    display: flex;
+    justify-content: end;
+  }
+
+  .header__menu-icon {
+    display: block;
+    position: relative;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+  }
+
+  .header__menu-icon span, .header__menu-icon::before, .header__menu-icon::after {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url('../../images/panel-icon.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction:column;
+    position: fixed;
+    top: 0;
+    width: 67%;
+    height: 100%;
+    background-color: #202020;
+    z-index: 1;
+    right: -100%;
+  }
+
+  .open-menu {
+    right: 0;
+  }
+
+  .nav__close-button {
+    background-image: url('../../images/close-button.svg');
+    border: none;
+    width: 33px;
+    height: 33px;
+    background-position: center;
+    background-color: inherit;
+    background-size: 30px;
+    align-self: flex-end;
+    margin: 29px 22px 0 0;
+    cursor: pointer;
+  }
+
+  .nav__container {
+    padding: 0;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 115px;
+  }
+
   .nav__link:nth-child(even) {
-    margin: 28px 0;
+    padding: 28px 0;
   }
 
   .nav__text {
-    margin: 0 0 28px;
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
+  }
+
+  .nav-account {
+    justify-content: center;
+    margin-bottom: 90px;
   }
 }
 
@@ -231,8 +288,9 @@
   }
 
   .nav__close-button {
-    top: 18px;
-    right: 18px;
+    padding: 0;
+    margin: 22px 18px 0 0;
+    background-size: 28px;
   }
 
   .nav__container {
@@ -240,14 +298,21 @@
   }
 
   .nav-account {
+    margin: 0;
     padding-bottom: 46px;
+    font-size: 13px;
+    line-height: 12px;
   }
 
   .nav__link:nth-child(even) {
-    margin: 24px 0;
+    padding: 24px 0;
   }
 
   .underline {
     padding-bottom: 8px;
+  }
+
+  .header__menu-icon {
+    width: 38px;
   }
 }
