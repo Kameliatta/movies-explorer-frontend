@@ -5,8 +5,6 @@ export default function Login({ onLogin }) {
   const [passwordErrors, setPasswordErrors] = useState('Поле не может быть пустым');
   const [emailErrors, setEmailErrors] = useState('Поле не может быть пустым');
   const [isFormValid, setIsFormValid] = useState(false);
-  const [checkEmail, setCheckEmail] = useState(false);
-  const [checkPassword, setCheckPassword] = useState(false);
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
 
@@ -41,17 +39,6 @@ export default function Login({ onLogin }) {
     }
   }
 
-  function blurHandler(e) {
-    switch (e.target.name) {
-      case 'email':
-        setCheckEmail(true);
-        break
-      case 'password':
-        setCheckPassword(true);
-        break
-    }
-  }
-
   function handleSubmit() {
     if (isFormValid) {
       onLogin(password, email)
@@ -77,7 +64,6 @@ export default function Login({ onLogin }) {
       passwordErrors={passwordErrors}
       emailErrors={emailErrors}
       isFormValid={isFormValid}
-      onBlur={blurHandler}
     />
     </>
   )

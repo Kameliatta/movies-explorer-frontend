@@ -6,9 +6,6 @@ export default function Register({ onSignup }) {
   const [emailErrors, setEmailErrors] = useState('Поле не может быть пустым');
   const [nameErrors, setNameErrors] = useState('Поле не может быть пустым');
   const [isFormValid, setIsFormValid] = useState(false);
-  const [checkEmail, setCheckEmail] = useState(false);
-  const [checkPassword, setCheckPassword] = useState(false);
-  const [checkName, setCheckName] = useState(false);
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -59,20 +56,6 @@ export default function Register({ onSignup }) {
       }
     } else {
       setNameErrors('');
-    }
-  }
-
-  function blurHandler(e) {
-    switch (e.target.name) {
-      case 'email':
-        setCheckEmail(true);
-        break
-      case 'password':
-        setCheckPassword(true);
-        break
-      case 'name':
-        setCheckName(true);
-        break
     }
   }
 

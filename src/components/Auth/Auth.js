@@ -28,7 +28,6 @@ export default function Auth(props) {
               maxLength="30"
               value={props.name}
               onChange={props.onNameChange}
-              onBlur={props.onBlur}
             >
             </input>
           </label>
@@ -45,7 +44,6 @@ export default function Auth(props) {
               className={`authorization__input input ${props.emailErrors ? 'error' : ''}`}
               value={props.email}
               onChange={props.onEmailChange}
-              onBlur={props.onBlur}
               required
             >
             </input>
@@ -64,7 +62,6 @@ export default function Auth(props) {
               minLength="5"
               value={props.password}
               onChange={props.onPasswordChange}
-              onBlur={props.onBlur}
               required
             >
             </input>

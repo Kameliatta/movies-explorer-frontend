@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Header(props) {
-  const jwt = localStorage.getItem('jwt');
   const [isActive, setIsActive] = useState(false);
 
   function handleClick() {
