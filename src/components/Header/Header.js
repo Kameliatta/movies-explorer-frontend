@@ -4,7 +4,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Header(props) {
+  const jwt = localStorage.getItem('jwt');
   const [isActive, setIsActive] = useState(false);
+
   function handleClick() {
     setIsActive(true);
   }
@@ -12,6 +14,7 @@ export default function Header(props) {
   function handleClose() {
     setIsActive(false);
   }
+
   return (
     <header className={`header ${props.authClassName}`}>
       <Link 
@@ -19,21 +22,9 @@ export default function Header(props) {
       >
         <img className="header__logo" src={headerLogo} alt="Логотип сайта"/>
       </Link>
-      <div className={`header__container ${props.displayButton}`}>
-        <Link 
-          className="header__link selected" 
-          to="/signup" 
-        >
-          <p className="header__text link-hover">{props.signup}</p>
-        </Link>
-        <Link 
-          className="header__link selected"
-          to="/signin"
-        >
-          <button className={`header__button button-hover ${props.displayButton}`}>{props.signin}</button> 
-        </Link>
-      </div>
       <div className={`header__menu-container ${props.isLogin}`}>
+      {jwt ? (
+        <>
         <div className="header__menu-icon" onClick={handleClick}>
           <span></span>
         </div>
@@ -75,6 +66,23 @@ export default function Header(props) {
             <div className="header__account-icon"></div>
           </div>
         </nav>
+        </>
+      ) : (
+      <div className="header__container">
+        <Link 
+          className="header__link selected" 
+          to="/signup" 
+        >
+          <p className="header__text link-hover">Регистрация</p>
+        </Link>
+        <Link 
+          className="header__link selected"
+          to="/signin"
+        >
+          <button className={`header__button button-hover`}>Войти</button> 
+        </Link>
+      </div>
+      )}
         <div className={`mask-content ${isActive ? '' : 'display'}`}></div>
       </div>
     </header>

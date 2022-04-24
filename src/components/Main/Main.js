@@ -13,7 +13,7 @@ export default function Main() {
   return (
     <section>
       <div className="main">
-        <Header signup="Регистрация" signin="Войти" isLogin="display" />
+        <Header />
         <Promo />
       </div>
       <NavTab />

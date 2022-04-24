@@ -23,10 +23,6 @@
   transition: .5s;
 }
 
-.search-form__switch:checked {
-  background: rgba(61, 220, 132, 1);
-}
-
 .search-form__switch:before {
   content: '';
   position: absolute;
@@ -42,7 +38,11 @@
   transform: scale(1.1);
 }
 
-.search-form__switch:checked:before {
+.switch:checked {
+  background: rgba(61, 220, 132, 1);
+}
+
+.switch:checked:before {
   left: 14px;
   background: white;
 }

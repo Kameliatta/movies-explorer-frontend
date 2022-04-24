@@ -4,6 +4,7 @@
   text-align: center;
   border-radius: 6px;
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
 }
 
 .card-list__movie-text-box {
@@ -34,7 +35,8 @@
 
 .card-list__movie-image {
   width: 100%;
-  object-fit: contain;
+  height: 200px;
+  object-fit: cover;
 }
 
 .card-list__movie-button {
@@ -51,6 +53,7 @@
   line-height: 11px;
   color: white;
   position: relative;
+  align-self: center;
 }
 
 .card-list__movie-button:hover {
@@ -94,6 +97,10 @@
   .card-list__movie-name {
     max-width: 120;
   }
+
+  .card-list__movie-image {
+    height: 190px;
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -118,5 +125,9 @@
 @media screen and (max-width: 500px) {
   .card-list__movie-name {
     max-width: 150px;
+  }
+
+  .card-list__movie-image {
+    height: 168px;
   }
 }
