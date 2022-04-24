@@ -7,4 +7,4 @@
 
 IP: 51.250.8.84
 
-[Ссылка на сайт](https://project-mesto.students.nomoredomains.xyz)
+[Ссылка на сайт](https://movies-explo.nomoredomains.work)
