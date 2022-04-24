@@ -9,11 +9,11 @@ import Portfolio from './Portfolio/Portfolio';
 import Footer from '../Footer/Footer';
 import AboutProject from './AboutProject/AboutProject';
 
-export default function Main() {
+export default function Main(props) {
   return (
     <section>
       <div className="main">
-        <Header />
+        <Header isLogin={props.loggedIn} />
         <Promo />
       </div>
       <NavTab />

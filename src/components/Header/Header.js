@@ -23,7 +23,7 @@ export default function Header(props) {
         <img className="header__logo" src={headerLogo} alt="Логотип сайта"/>
       </Link>
       <div className={`header__menu-container ${props.isLogin}`}>
-      {jwt ? (
+      {props.isLogin ? (
         <>
         <div className="header__menu-icon" onClick={handleClick}>
           <span></span>

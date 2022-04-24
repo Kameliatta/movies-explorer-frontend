@@ -37,7 +37,8 @@ function App() {
             }
           })
           .catch((err) => {
-            console.log(`Ошибка: ${err}`)
+            console.log(err);
+            setLoggedIn(false);
           })
     }
   }
@@ -176,7 +177,7 @@ function App() {
   return (
     <Routes>
       <Route exact path='/' element={
-        <Main />
+        <Main loggedIn={loggedIn} />
       }></Route>
       <Route path='/movies' element={
         <ProtectedRoute loggedIn={loggedIn}>

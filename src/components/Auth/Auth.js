@@ -32,7 +32,7 @@ export default function Auth(props) {
             >
             </input>
           </label>
-          <span className="authorization__error">{props.nameErrors}</span>
+          <span className="authorization__error">{props.name !== '' && props.nameErrors}</span>
         </div>
         <div className="authorization__text-box">
           <span className="authorization__text">
@@ -50,7 +50,7 @@ export default function Auth(props) {
             >
             </input>
           </label>
-          <span className="authorization__error">{props.emailErrors}</span>
+          <span className="authorization__error">{props.email !== '' && props.emailErrors}</span>
         </div>
         <div className="authorization__text-box">
           <span className="authorization__text">
@@ -69,7 +69,7 @@ export default function Auth(props) {
             >
             </input>
           </label>
-          <span className="authorization__error">{props.passwordErrors}</span>
+          <span className="authorization__error">{props.password !== '' && props.passwordErrors}</span>
         </div>
         <div className="authorization__navigation">
           <button
