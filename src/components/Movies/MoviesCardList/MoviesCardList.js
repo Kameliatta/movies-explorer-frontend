@@ -8,31 +8,34 @@ export default function MoviesCardList(props) {
   return (
     <>
     <section className="movies-card-list">
-      {movies.length !== 0 ? 
-        (props.isLoading ? (
-            <Preloader />
-          ) : (props.movies.length !== 0 && props.searchFilter ?
-                (<ul className="card-list">
-                {props.movies.map((movies, i) => {
-                  return <MoviesCard
-                    moviesButton={props.moviesButtonClass}
-                    key={i}
-                    movie={movies}
-                    onSaveMovie={props.onSaveMovie}
-                    onDeleteMovie={props.onDeleteMovie}
-                    savedMoviesData={props.savedMoviesData}
-                    filteredMovie={props.movies}
-                    url={props.url}
-                    isSaved={props.isSaved}
-                  />
-                })}
-                </ul>
-                ) : 
-                <p>Ничего не найдено</p>
-            )
-      ) : (
-        <p>Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз</p>
-      )}
+     {props.searchFilter || props.savedMovies ?
+        (movies.length !== 0 ?
+          (props.isLoading ? (
+              <Preloader />
+            ) : (props.movies.length !== 0 ?
+                  (<ul className="card-list">
+                  {props.movies.map((movies, i) => {
+                    return <MoviesCard
+                      moviesButton={props.moviesButtonClass}
+                      key={i}
+                      movie={movies}
+                      onSaveMovie={props.onSaveMovie}
+                      onDeleteMovie={props.onDeleteMovie}
+                      savedMoviesData={props.savedMoviesData}
+                      filteredMovie={props.movies}
+                      url={props.url}
+                      isSaved={props.isSaved}
+                    />
+                  })}
+                  </ul>
+                  ) : 
+                  <p>Ничего не найдено</p>
+              )
+        ) : (
+          <p>Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз</p>
+        )) : 
+        (<></>)
+      }
     <div className="movies-card-list__container">
       {props.searchFilter ? (
         <button

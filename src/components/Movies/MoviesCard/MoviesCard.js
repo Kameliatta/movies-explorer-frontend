@@ -30,19 +30,26 @@ export default function MoviesCard(props) {
   return (
     <>
     <li className="card-list__movie button-hover">
-      <div className="card-list__movie-text-box">
-        <h3 className="card-list__movie-name">{props.movie.nameRU}</h3>
-        <span className="card-list__movie-duration">{props.movie.duration}</span>
-      </div>
-      <img
-        className="card-list__movie-image"
-        src={props.movie.image.url === undefined ? props.movie.image : props.url + props.movie.image.url}
-        alt={props.movie.nameRU}
-      ></img>
-      <button
-        onClick={handleSave}
-        className={`card-list__movie-button ${props.moviesButton} ${movieLikeButtonClassName}`}
-      >Сохранить</button>
+      <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card-list__movie-link"
+            href={props.movie.trailerLink}
+      >
+        <div className="card-list__movie-text-box">
+          <h3 className="card-list__movie-name">{props.movie.nameRU}</h3>
+          <span className="card-list__movie-duration">{props.movie.duration}</span>
+        </div>
+        <img
+          className="card-list__movie-image"
+          src={props.movie.image.url === undefined ? props.movie.image : props.url + props.movie.image.url}
+          alt={props.movie.nameRU}
+        ></img>
+        <button
+          onClick={handleSave}
+          className={`card-list__movie-button ${props.moviesButton} ${movieLikeButtonClassName}`}
+        >Сохранить</button>
+      </a>
     </li>
     </>
   )

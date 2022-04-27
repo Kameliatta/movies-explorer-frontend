@@ -1,18 +1,15 @@
 import React from 'react';
-import account_icon from '../../images/account.svg';
 import Header from '../Header/Header';
 import SearchForm from '../Movies/SearchForm/SearchForm';
 import FilterMovies from '../../utils/FilterMovies';
 import Footer from '../Footer/Footer';
+import InfoTooltip from '../InfoTooltip/InfoTooltip';
 
 export default function SavedMovies(props) {
   return (
     <>
       <Header
-        movies={'Фильмы'}
-        savedMovies={'Сохранённые фильмы'}
-        account={'Аккаунт'}
-        img={account_icon}
+        isLogin={props.loggedIn}
         displayButton="display"
       />
       <SearchForm
@@ -32,6 +29,7 @@ export default function SavedMovies(props) {
         nextButton={true}
       />
       <Footer />
+      <InfoTooltip infoTooltip={props.infoTooltip} />
       </>
   )
 };

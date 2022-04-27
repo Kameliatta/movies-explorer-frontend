@@ -73,6 +73,12 @@
   line-height: 16px;
   cursor: pointer;
   width: max-content;
+  position: relative;
+}
+
+.button-underline:hover {
+  box-shadow: 0 2px 1px -1px white;
+  transition: .2s;
 }
 
 .profile-navigation__link {
@@ -80,7 +86,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
-  line-height: 16px;
+  line-height: 15px;
   color: rgba(238, 52, 101, 1);
   border: none;
   background-color: inherit;
@@ -90,6 +96,30 @@
 .button-disabled {
   color: gray;
   cursor: default;
+}
+
+.button-success::before {
+  content: 'Успешно!';
+  position: absolute;
+  width: 100px;
+  height: 16px;
+  top: 0;
+  right: 0;
+  background-color: rgba(32, 32, 32, 1);
+  color: rgb(70, 206, 70);
+  transition: .3s;
+}
+
+.button-fail::before {
+  content: 'Ошибка';
+  position: absolute;
+  width: 100px;
+  height: 16px;
+  top: 0;
+  right: 0;
+  background-color: rgba(32, 32, 32, 1);
+  color: red;
+  transition: .3s;
 }
 
 @media screen and (max-width: 1024px) {
@@ -128,5 +158,10 @@
   .profile-navigation__link {
     font-size: 12px;
     line-height: 15px;
+  }
+
+  .button-success::before {
+    width: 90px;
+    height: 15px;
   }
 }

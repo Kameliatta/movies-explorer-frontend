@@ -1,30 +1,43 @@
 import './SearchForm.css';
 import React, { useEffect, useState } from 'react';
-export default function SearchForm({ onSearch, onHandleLoading, onShort }) {
-  const [values, setValues] = useState({});
+import { useLocation } from 'react-router-dom';
+export default function SearchForm(props) {
+  const [values, setValues] = useState('');
   const [checked, setChecked] = useState(false);
-  const searchData = localStorage.getItem('searchData');
+  const location = useLocation();
+  
+  useEffect(() => {
+    if (location.pathname === '/movies') {
+      if (props.searchData !== null) {
+        setValues(props.searchData || '');
+      } 
+      if (props.shortFilmData === 'true') {
+        setChecked(true);
+      }
+    }
+  }, []);
 
   function handleCheckBoxChange() {
-    setChecked(!checked)
-    localStorage.setItem('shortFilmData', !checked);
+    setChecked(!checked);
+    if (location.pathname === '/movies') {
+      localStorage.setItem('shortFilmData', !checked);
+    }
   }
 
   function handleInputChange(e) {
-    setValues(e.target.value)
+    setValues(e.target.value);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    onSearch(values);
-    onShort(checked);
-    onHandleLoading(true);
+    props.onSearch(values);
+    props.onShort(checked);
+    props.onHandleLoading(true);
+    if (location.pathname === '/movies') {
+      localStorage.setItem('searchData', values);
+    }
   }
-
-  useEffect(() => {
-    setValues(searchData);
-  }, [searchData]);
 
   return (
     <section className="search-form">

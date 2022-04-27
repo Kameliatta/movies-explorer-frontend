@@ -43,7 +43,7 @@ export default function Header(props) {
                 className="link selected" 
                 to="/movies" 
               >
-                <span className="nav__text underline link-hover">{props.movies}</span>
+                <span className="nav__text underline link-hover">Фильмы</span>
               </Link>
             </li>
             <li className="nav__link">
@@ -51,7 +51,7 @@ export default function Header(props) {
                 className="link saved-movies selected" 
                 to="/saved-movies" 
               >
-                <span className="nav__text underline link-hover">{props.savedMovies}</span>
+                <span className="nav__text underline link-hover">Сохранённые фильмы</span>
               </Link>
             </li>
           </ul>

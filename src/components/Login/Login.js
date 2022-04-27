@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Auth from '../Auth/Auth';
+import InfoTooltip from '../InfoTooltip/InfoTooltip';
 
-export default function Login({ onLogin }) {
+export default function Login(props) {
   const [passwordErrors, setPasswordErrors] = useState('Поле не может быть пустым');
   const [emailErrors, setEmailErrors] = useState('Поле не может быть пустым');
   const [isFormValid, setIsFormValid] = useState(false);
@@ -41,7 +42,7 @@ export default function Login({ onLogin }) {
 
   function handleSubmit() {
     if (isFormValid) {
-      onLogin(password, email)
+      props.onLogin(password, email)
     } else {
       console.log('error');
     }
@@ -65,6 +66,7 @@ export default function Login({ onLogin }) {
       emailErrors={emailErrors}
       isFormValid={isFormValid}
     />
+    <InfoTooltip infoTooltip={props.infoTooltip} />
     </>
   )
 };

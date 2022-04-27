@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import MoviesCardList from '../components/Movies/MoviesCardList/MoviesCardList';
 
 function useWindowSize() {
@@ -23,8 +24,28 @@ export default function SavedMovies(props) {
   const [number, setNumber] = useState();
   const [postsToShow, setPostsToShow] = useState([]);
   const [liked, setLiked] = useState(false);
+  const [checked, setChecked] = useState(false);
+  const [search, setSearch] = useState('');
 
   const filmData = JSON.parse(localStorage.getItem('filmData'));
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === '/movies') {
+      if (props.searchData !== null) {
+        setSearch(props.searchData);
+      } 
+      if (props.shortFilmData === 'true') {
+        setChecked(true);
+      } else {
+        setChecked(props.shortFilter);
+      }
+    } else {
+      setChecked(props.shortFilter);
+      setSearch(props.searchFilter);
+    }
+  }, [location.pathname, props.shortFilmData, props.searchData, props.searchFilter, props.shortFilter]);
 
   useEffect(() => {
     if (props.savedMovies) {
@@ -44,19 +65,16 @@ export default function SavedMovies(props) {
   }
 
   useEffect(() => {
-    if (props.shortFilter) {
+    if (checked) {
       setFilteredMovie(movies.filter((n) => 
         n.nameRU.toLowerCase()
-          .includes(props.searchFilter.toLowerCase()))
+          .includes(search.toLowerCase()))
           .filter(isShort)
       );
     } else {
-      setFilteredMovie(movies.filter((n) => n.nameRU.toLowerCase().includes(props.searchFilter.toLowerCase())));
+      setFilteredMovie(movies.filter((n) => n.nameRU.toLowerCase().includes(search.toLowerCase())));
     }
-
-  }, [props.shortFilter, props.searchFilter, movies]);
-
-
+  }, [checked, search, movies]);
 
   // ограничение отображения фильмов
 
@@ -101,8 +119,7 @@ export default function SavedMovies(props) {
       onDeleteMovie={props.onDeleteMovie}
       movies={liked ? filteredMovie : postsToShow}
       filteredMovie={filteredMovie}
-      searchFilter={props.searchFilter}
-      shortFilter={props.shortFilter}
+      searchFilter={search}
       isLoading={props.isLoading}
       onHandleLoading={props.onHandleLoading}
       moviesButtonClass={props.moviesButtonClass}

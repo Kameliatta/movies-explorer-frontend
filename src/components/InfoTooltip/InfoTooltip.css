@@ -1,0 +1,33 @@
+.info-tooltip {
+  display: none;
+  position: sticky;
+  bottom: 15%;
+  text-align: center;
+  width: max-content;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+}
+
+.info-tooltip__message {
+  margin: 0;
+  color: black;
+  padding: 20px 30px 20px;
+  font-size: 15px;
+}
+
+.active {
+  transition: .5s;
+  display: block;
+}
+
+@media screen and (max-width: 500px) {
+  .info-tooltip__message {
+    font-size: 12px;
+    margin: 0;
+    color: black;
+    padding: 10px 20px 10px;
+  }
+}
