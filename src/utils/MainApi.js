@@ -105,8 +105,8 @@ class Api {
 
 
 const MainApi = new Api({
-  // url: 'https://api.movies-explo.nomoredomains.work/',
-  url: 'http://localhost:3001/',
+  url: 'https://api.movies-explo.nomoredomains.work/',
+  // url: 'http://localhost:3001/',
   headers: {
     'Content-Type': 'application/json'
   }
