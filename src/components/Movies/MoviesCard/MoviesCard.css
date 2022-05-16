@@ -1,0 +1,138 @@
+.card-list__movie {
+  margin: 0 auto;
+  background-color: rgba(34, 34, 34, 1);
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
+}
+
+.card-list__movie-text-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px;
+}
+
+.card-list__movie-name {
+  max-width: 150px;
+  margin: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card-list__movie-duration {
+  color: rgba(139, 139, 139, 1);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.card-list__movie-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-list__movie-button {
+  padding: 0;
+  background-color: rgba(49, 49, 49, 1);
+  width: 100px;
+  height: 29px;
+  border-radius: 30px;
+  border-style: none;
+  margin: 15px 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 11px;
+  color: white;
+  position: relative;
+  align-self: center;
+}
+
+.card-list__movie-button:hover {
+  transition: .2s;
+  box-shadow: 0 0 1px 0 #EE3465 inset, 0 0 1px 2px #EE3465;
+}
+
+.focus:before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 29px;
+  border-radius: 30px;
+  background-color: rgba(238, 52, 101, 1);
+  background-image: url('../../../images/checkmark.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 0;
+  right: 0;
+}
+
+.selected_button:before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 29px;
+  border-radius: 30px;
+  top: 0;
+  right: 0;
+  background-color: inherit;
+  background-image: url('../../../images/remove_movie.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card-list__movie-link {
+  text-decoration: none;
+  color: white;
+}
+
+@media screen and (max-width: 1024px) {
+  .card-list__movie-button {
+    margin: 14px 0;
+  }
+
+  .card-list__movie-name {
+    max-width: 120;
+  }
+
+  .card-list__movie-image {
+    height: 190px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .card-list__movie-text-box {
+    padding: 14px;
+  }
+
+  .card-list__movie-name {
+    font-size: 12px;
+    max-width: 24vw;
+  }
+
+  .card-list__movie-duration {
+    font-size: 10px;
+  }
+
+  .card-list__movie-button {
+    margin-top: 12px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card-list__movie-name {
+    max-width: 150px;
+  }
+
+  .card-list__movie-image {
+    height: 168px;
+  }
+}

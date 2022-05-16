@@ -1,0 +1,167 @@
+.profile {
+  padding: 74px 0 0;
+  text-align: center;
+}
+
+.profile__container {
+  max-width: 410px;
+  margin: 123px auto 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__welcome {
+  margin: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  cursor: default;
+}
+
+.profile__text-box {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 17px;
+}
+
+.profile__text-box:first-child {
+  padding: 0 0 16px;
+  border-bottom: 1px solid rgba(66, 66, 66, 1);
+}
+
+.profile__text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.profile__input {
+  color: #FFFFFF;
+  outline: none;
+  background-color: inherit;
+  border: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  width: 50%;
+  text-align: end;
+}
+
+.profile__input::placeholder {
+  color: #FFFFFF;
+  text-align: end;
+}
+
+.profile-navigation {
+  margin: 220px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-navigation__button {
+  padding: 0;
+  border: none;
+  background-color: inherit;
+  color: white;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  cursor: pointer;
+  width: max-content;
+  position: relative;
+}
+
+.button-underline:hover {
+  box-shadow: 0 2px 1px -1px white;
+  transition: .2s;
+}
+
+.profile-navigation__link {
+  margin: 16px 0 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+  color: rgba(238, 52, 101, 1);
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.button-disabled {
+  color: gray;
+  cursor: default;
+}
+
+.button-success::before {
+  content: 'Успешно!';
+  position: absolute;
+  width: 100px;
+  height: 16px;
+  top: 0;
+  right: 0;
+  background-color: rgba(32, 32, 32, 1);
+  color: rgb(70, 206, 70);
+  transition: .3s;
+}
+
+.button-fail::before {
+  content: 'Ошибка';
+  position: absolute;
+  width: 100px;
+  height: 16px;
+  top: 0;
+  right: 0;
+  background-color: rgba(32, 32, 32, 1);
+  color: red;
+  transition: .3s;
+}
+
+@media screen and (max-width: 1024px) {
+  .profile {
+    padding: 236px 0 0;
+  }
+
+  .profile__container {
+    margin: 96px auto 0;
+  }
+
+  .profile-navigation {
+    margin: 210px auto 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .profile {
+    padding: 70px 0 0;
+  }
+
+  .profile__container {
+    margin: 80px auto 0;
+    max-width: 260px;
+  }
+
+  .profile-navigation {
+    margin: 379px auto 0;
+  }
+
+  .profile-navigation__button {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  
+  .profile-navigation__link {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .button-success::before {
+    width: 90px;
+    height: 15px;
+  }
+}
