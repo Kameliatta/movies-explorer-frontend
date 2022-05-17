@@ -11,12 +11,17 @@
   font-style: normal;
 }
 
-.display {
-  display: none !important;
+.page::-webkit-scrollbar {
+  width: 8px;
 }
 
-.block-scroll {
-  overflow: hidden;
+.page::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 20px;
+}
+
+.display {
+  display: none !important;
 }
 
 .link {
@@ -31,7 +36,6 @@
 
 #root {
   min-height: 100vh;
-  max-width: 1600px;
   margin: auto;
 }
 

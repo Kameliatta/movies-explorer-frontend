@@ -8,8 +8,8 @@ export default function MoviesCardList(props) {
   return (
     <>
     <section className="movies-card-list">
-     {props.searchFilter || props.savedMovies ?
-        (movies.length !== 0 ?
+     {(props.searchFilter || props.savedMovies) && movies !== null ?
+        (movies !== null ?
           (props.isLoading ? (
               <Preloader />
             ) : (props.movies.length !== 0 ?
@@ -42,7 +42,7 @@ export default function MoviesCardList(props) {
           onClick={props.handleClick}
           className={
             `movies-card-list__container-button
-            ${props.filteredMovie.length === props.movies.length || props.nextButton ? "display" : ""}`
+            ${props.filteredMovie.length === props.movies.length || props.nextButton || movies === null ? "display" : ""}`
           }
         >Ещё</button>
       ) : (

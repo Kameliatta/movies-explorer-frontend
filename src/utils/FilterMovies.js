@@ -65,15 +65,17 @@ export default function SavedMovies(props) {
   }
 
   useEffect(() => {
-    if (checked) {
-      setFilteredMovie(movies.filter((n) => 
-        n.nameRU.toLowerCase()
-          .includes(search.toLowerCase()))
-          .filter(isShort)
-      );
-    } else {
-      setFilteredMovie(movies.filter((n) => n.nameRU.toLowerCase().includes(search.toLowerCase())));
-    }
+    if (movies !== null) {
+      if (checked) {
+        setFilteredMovie(movies.filter((n) => 
+          n.nameRU.toLowerCase()
+            .includes(search.toLowerCase()))
+            .filter(isShort)
+        );
+      } else {
+        setFilteredMovie(movies.filter((n) => n.nameRU.toLowerCase().includes(search.toLowerCase())));
+      }
+    } 
   }, [checked, search, movies]);
 
   // ограничение отображения фильмов
